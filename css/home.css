@@ -217,38 +217,15 @@
    RESPONSIVE: DÀNH CHO ĐIỆN THOẠI (Dưới 768px)
 ========================================= */
 @media (max-width: 768px) {
-    
-    /* 1. Phần Hero: Chuyển từ 2 cột sang hàng dọc */
-    .hero-container {
-        flex-direction: column; /* Xếp dọc: Chữ trên, Ảnh dưới */
-        text-align: center;      /* Căn chữ ra giữa cho đẹp trên điện thoại */
-        padding: 40px 5%;        /* Giảm bớt khoảng cách lề */
-    }
-
-    .hero-text h1 {
-        font-size: 32px;         /* Thu nhỏ chữ tiêu đề */
+    .hero-container, .card, .info-box, .contact-form-wrapper {
+        height: auto !important; /* Để khung tự dài ra theo nội dung bên trong */
+        min-height: unset;       /* Bỏ giới hạn chiều cao cũ */
+        padding-top: 40px;       /* Thêm khoảng trống trên dưới để không bị sát quá */
+        padding-bottom: 40px;
     }
 
     .hero-image img {
-        height: 300px;           /* Giảm chiều cao ảnh cho đỡ chiếm chỗ */
-        margin-top: 30px;
-    }
-
-    /* 2. Phần Quick Links: Chuyển 3 cột thành 1 cột */
-    .card-container {
-        grid-template-columns: 1fr; /* Chỉ để 1 cột duy nhất */
-        gap: 20px;
-    }
-
-    /* 3. Phần Stats: Chuyển thành 2 hàng 2 cột */
-    .stats-section {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Chia làm 2 cột */
-        gap: 20px;
-        padding: 40px 5%;
-    }
-
-    .stat-box h2 {
-        font-size: 28px;
+        height: auto;            /* Ảnh không được cố định chiều cao, để nó tự nhảy theo tỉ lệ */
+        max-height: 350px;       /* Giới hạn tối đa để không chiếm hết màn hình */
     }
 }

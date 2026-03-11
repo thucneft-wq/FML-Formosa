@@ -105,33 +105,14 @@ footer a:hover { color: white; }
 
 /* RESPONSIVE CHUNG CHO HEADER & FOOTER */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Logo ở trên, Menu ở dưới */
-        padding: 15px;
-        gap: 15px;
+    .fml-text {
+        font-size: 24px; /* Thu nhỏ FML lại một chút */
     }
-
-    .nav-links {
-        gap: 10px;
-        flex-wrap: wrap; /* Nếu menu dài quá sẽ tự xuống dòng */
-        justify-content: center;
+    .logo-subtext {
+        padding-left: 5px;
+        margin-left: 5px;
     }
-
-    .nav-links a {
-        font-size: 12px; /* Thu nhỏ chữ menu */
-    }
-
-    .search-bar {
-        width: 100%;
-    }
-
-    .search-bar input {
-        width: 80%; /* Để chỗ cho nút bấm */
-    }
-
-    footer {
-        flex-direction: column; /* Footer xếp dọc */
-        text-align: center;
-        gap: 30px;
+    .family-text, .formosa-text {
+        font-size: 8px; /* Thu nhỏ chữ giải nghĩa */
     }
 }
