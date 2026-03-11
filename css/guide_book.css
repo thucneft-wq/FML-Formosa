@@ -24,24 +24,63 @@
 .read-more { font-weight: bold; color: var(--primary-red); font-size: 13px; }
 
 @media (max-width: 768px) {
-    /* Ép lưới về 1 cột duy nhất */
-    .guide-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 30px; /* Tạo khoảng cách giữa các bài viết */
-        padding: 0 15px;
+    /* 1. Header trang: Thu nhỏ để dành chỗ cho nội dung */
+    .page-header {
+        padding: 40px 20px;
+        height: auto !important;
+    }
+    .page-header h1 {
+        font-size: 26px;
+        line-height: 1.2;
     }
 
+    /* 2. Bộ lọc: Tránh bị tràn màn hình ngang */
+    .filter-tabs {
+        display: flex;
+        flex-wrap: wrap; /* Tự động xuống dòng nếu quá nhiều nút */
+        justify-content: center;
+        gap: 10px;
+        padding: 0 10px;
+    }
+    .filter-tabs li a {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+
+    /* 3. Container chứa các Card: Quan trọng nhất */
+    .guide-content {
+        padding: 20px 10px;
+    }
+    .guide-grid {
+        display: flex; /* Chuyển sang Flex để dễ kiểm soát chiều dọc */
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* 4. Thẻ bài viết (Card): Fix lỗi mất chữ */
     .guide-card {
-        width: 100%;
-        height: auto !important; /* Cho phép thẻ dài ra theo nội dung */
+        width: 100% !important;
+        height: auto !important; /* Tuyệt đối không để số px ở đây */
+        min-height: 100px;
+        display: flex;
+        flex-direction: column;
+        overflow: visible !important; /* Đảm bảo chữ thò ra ngoài là thấy liền */
     }
 
     .card-img {
-        height: 200px; /* Cố định chiều cao ảnh để không quá to */
+        height: 180px; /* Cố định chiều cao ảnh */
+        width: 100%;
     }
 
-    .card-text h3 {
-        font-size: 20px; /* Tăng cỡ chữ tiêu đề cho dễ đọc trên đt */
+    .card-text {
+        padding: 20px;
+        height: auto !important; /* Cho phép khung chứa chữ tự dài ra */
+    }
+
+    .card-text p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        white-space: normal; /* Đảm bảo chữ tự xuống dòng khi hết hàng */
     }
 }
