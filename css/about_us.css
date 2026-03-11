@@ -1,48 +1,233 @@
 /* =========================================
-   FILE: about.css
+   GENERAL STYLE & VARIABLES
 ========================================= */
-.about-section { display: flex; justify-content: space-between; align-items: center; padding: 80px 50px; gap: 50px; }
-.about-text-col, .about-image-col { width: 50%; }
-.about-text-col h1, .about-text-col h2 { margin-bottom: 20px; font-size: 32px; color: var(--primary-red); }
-.about-text-col p { margin-bottom: 30px; line-height: 1.6; color: #555; }
+:root {
+    --primary-red: #e62129;
+    --dark-red: #b31a1f;
+    --text-dark: #1a1a1a;
+    --text-gray: #555;
+    --bg-light: #fce7e8;
+}
 
-.feature-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-.circle-icon { display: inline-block; width: 20px; height: 20px; background-color: var(--primary-red); border-radius: 50%; }
+/* =========================================
+   HERO SECTION (OUR MISSION)
+========================================= */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    gap: 60px;
+    background-color: #fff;
+    min-height: 70vh;
+}
+
+.about-text-col {
+    flex: 1.2;
+    max-width: 600px;
+}
+
+.sub-title {
+    color: var(--primary-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.about-text-col h1 {
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1.5px;
+}
+
+.about-text-col h2 {
+    font-size: 42px; /* Dành cho section giới thiệu thứ 2 */
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.about-text-col p {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 35px;
+    max-width: 520px;
+}
+
+/* =========================================
+   BUTTONS (Đồng nhất hiệu ứng Hover)
+========================================= */
+.hero-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-black {
+    background-color: var(--primary-red); /* Chuyển về màu đỏ cho đồng bộ */
+    color: white;
+    border: none;
+}
+
+.btn-black:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(230, 33, 41, 0.3);
+}
+
+.btn-white {
+    background-color: transparent;
+    border: 2px solid var(--text-dark);
+    color: var(--text-dark);
+}
+
+.btn-white:hover {
+    background-color: var(--text-dark);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   IMAGE STYLES
+========================================= */
+.about-image-col {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-image-col img, .img-placeholder {
+    width: 100%;
+    max-width: 500px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 15px 15px 0px var(--bg-light);
+}
 
 .img-placeholder {
-    width: 100%; height: 350px; border-radius: 15px;
-    display: flex; justify-content: center; align-items: center;
-    background-color: var(--bg-light); box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
-    border: 1px solid var(--border-light); color: #999;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    font-weight: bold;
 }
 
-.achievements { padding: 40px 50px 80px 50px; text-align: center; }
-.achievements h2 { margin-bottom: 40px; }
-.achieve-grid { display: flex; justify-content: center; gap: 40px; }
+/* =========================================
+   FEATURES & ACHIEVEMENTS
+========================================= */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li { 
+    margin-bottom: 18px; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    font-size: 18px;
+    color: var(--text-gray);
+}
+
+.circle-icon { 
+    display: inline-block; 
+    width: 12px; 
+    height: 12px; 
+    background-color: var(--primary-red); 
+    border-radius: 50%; 
+}
+
+.achievements { 
+    padding: 80px 10%; 
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.achievements h2 { 
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 50px; 
+}
+
+.achieve-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+}
+
 .achieve-box {
-    border: 1px solid var(--border-light); border-radius: 20px; padding: 40px 60px;
-    background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-}
-.achieve-box h3 { font-size: 36px; margin-bottom: 10px; color: var(--primary-red); font-weight: bold; }
-/* Bo góc ảnh và thêm bóng đổ nhẹ */
-img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    object-fit: cover; /* Giúp ảnh không bị méo khi co giãn */
+    flex: 1;
+    border: 1px solid #eee; 
+    border-radius: 20px; 
+    padding: 40px;
+    background: white; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
 }
 
+.achieve-box:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-red);
+}
+
+.achieve-box h3 { 
+    font-size: 42px; 
+    margin-bottom: 10px; 
+    color: var(--primary-red); 
+    font-weight: 900; 
+}
+
+.achieve-box p {
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   RESPONSIVE (MOBILE)
+========================================= */
 @media (max-width: 768px) {
     .about-section {
         flex-direction: column;
         padding: 40px 20px;
+        text-align: center;
     }
 
     .about-text-col, .about-image-col {
-        width: 100%; /* Chiếm hết chiều ngang điện thoại */
+        width: 100%;
+        max-width: 100%;
     }
+
+    .about-text-col h1 { font-size: 38px; }
+    
+    .hero-btns { justify-content: center; }
+
+    .about-image-col { order: -1; } /* Ảnh lên trước trên điện thoại */
+    
+    .about-image-col img { height: 350px; }
 
     .achieve-grid {
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
     }
+    
+    .achieve-box { width: 100%; max-width: 300px; }
 }

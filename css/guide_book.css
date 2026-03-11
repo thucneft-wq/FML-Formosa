@@ -17,11 +17,51 @@
     transition: 0.3s;
 }
 .guide-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-.card-img { height: 180px; background-color: var(--bg-light); display: flex; justify-content: center; align-items: center; color: #999; }
+/* Tìm class .card-img (cái hộp chứa ảnh) */
+.card-img {
+    width: 100%;
+    height: 200px;         /* Chiều cao cố định cho tất cả các card */
+    overflow: hidden;      /* Để ảnh không tràn ra ngoài góc bo */
+    padding: 0;            /* Đảm bảo KHÔNG có padding gây lệch ảnh */
+    margin: 0;
+    display: block;        /* Để nó chiếm hết chiều ngang */
+}
+
+/* Tìm class ảnh bên trong (thẻ img) */
+.card-img img {
+    width: 100% !important; /* Ép ảnh rộng 100% để không hụt bên trái */
+    height: 100% !important;/* Ép ảnh cao 100% */
+    display: block;         /* Xóa bỏ các khoảng cách mặc định của trình duyệt */
+    object-fit: cover;      /* Giúp ảnh lấp đầy khung mà không bị méo */
+    object-position: center;/* Lấy tâm ảnh làm chuẩn */
+}
 .card-text { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
 .card-text h3 { font-size: 18px; margin-bottom: 10px; line-height: 1.4; }
 .card-text p { font-size: 14px; margin-bottom: 20px; color: #555; flex-grow: 1; }
 .read-more { font-weight: bold; color: var(--primary-red); font-size: 13px; }
+/* Container của từng cái Card */
+.guide-card {
+    display: flex;
+    flex-direction: column; /* Xếp ảnh trên, chữ dưới */
+    border-radius: 15px;
+    overflow: hidden; /* QUAN TRỌNG: Để ảnh không bị thò ra ngoài góc bo tròn */
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    height: 100%; /* Giúp các card cao bằng nhau */
+}
+
+/* Khối chứa ảnh */
+.card-img {
+    width: 100%;
+    height: 200px; /* Cố định chiều cao phần ảnh */
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* QUAN TRỌNG: Để ảnh tự co giãn mà không bị méo */
+}
 
 @media (max-width: 768px) {
     /* 1. Header trang: Thu nhỏ để dành chỗ cho nội dung */
