@@ -88,3 +88,43 @@
 .newsletter-form .btn-black { 
     background-color: black; color: white; border: none; padding: 0 30px; border-radius: 8px; font-weight: bold; cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    /* Phần tiêu đề trang sự kiện */
+    .news-header {
+        padding: 30px 15px;
+        text-align: center;
+    }
+
+    /* Các bộ lọc (All, Festival, Job...) cần cho phép cuộn ngang nếu quá dài */
+    .filter-tabs {
+        display: flex;
+        overflow-x: auto; /* Cho phép vuốt sang trái/phải để chọn */
+        white-space: nowrap;
+        padding-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    /* Biến các thẻ sự kiện nổi bật thành 1 cột */
+    .events-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    /* QUAN TRỌNG: Chuyển tin tức từ Dàn Ngang sang Dàn Dọc */
+    .news-list-item {
+        flex-direction: column; /* Ảnh ở trên, chữ ở dưới */
+        height: auto !important;
+    }
+
+    .news-list-img {
+        width: 100% !important; /* Ảnh chiếm hết chiều ngang */
+        height: 200px;
+        border-radius: 10px 10px 0 0; /* Bo góc trên của ảnh */
+    }
+
+    .news-list-text {
+        padding: 20px;
+    }
+}

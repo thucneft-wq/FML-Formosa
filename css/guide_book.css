@@ -24,8 +24,24 @@
 .read-more { font-weight: bold; color: var(--primary-red); font-size: 13px; }
 
 @media (max-width: 768px) {
+    /* Ép lưới về 1 cột duy nhất */
     .guide-grid {
-        grid-template-columns: 1fr; /* 1 cột duy nhất */
-        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px; /* Tạo khoảng cách giữa các bài viết */
+        padding: 0 15px;
+    }
+
+    .guide-card {
+        width: 100%;
+        height: auto !important; /* Cho phép thẻ dài ra theo nội dung */
+    }
+
+    .card-img {
+        height: 200px; /* Cố định chiều cao ảnh để không quá to */
+    }
+
+    .card-text h3 {
+        font-size: 20px; /* Tăng cỡ chữ tiêu đề cho dễ đọc trên đt */
     }
 }
