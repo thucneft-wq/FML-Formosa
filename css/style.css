@@ -102,3 +102,36 @@ footer a:hover { color: white; }
 .btn-black:hover { background-color: #c00f18; }
 .btn-white { background-color: white; color: var(--primary-red); border: 1px solid var(--primary-red); }
 .btn-white:hover { background-color: var(--primary-red); color: white; }
+
+/* RESPONSIVE CHUNG CHO HEADER & FOOTER */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Logo ở trên, Menu ở dưới */
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap; /* Nếu menu dài quá sẽ tự xuống dòng */
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 12px; /* Thu nhỏ chữ menu */
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-bar input {
+        width: 80%; /* Để chỗ cho nút bấm */
+    }
+
+    footer {
+        flex-direction: column; /* Footer xếp dọc */
+        text-align: center;
+        gap: 30px;
+    }
+}

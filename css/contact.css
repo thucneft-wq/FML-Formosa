@@ -40,3 +40,21 @@ input:focus, textarea:focus { border-color: var(--primary-red); box-shadow: 0 0 
     border-radius: 10px; color: var(--primary-red); font-weight: bold; cursor: pointer; transition: 0.3s;
 }
 .connect-box:hover { background-color: var(--primary-red); color: white; }
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info, .contact-form-wrapper {
+        width: 100%; /* Form và thông tin rộng 100% */
+    }
+
+    .form-row {
+        flex-direction: column; /* Name và Email xếp chồng lên nhau */
+    }
+
+    .connect-boxes {
+        flex-direction: column;
+    }
+}

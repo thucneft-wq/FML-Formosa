@@ -22,3 +22,10 @@
 .card-text h3 { font-size: 18px; margin-bottom: 10px; line-height: 1.4; }
 .card-text p { font-size: 14px; margin-bottom: 20px; color: #555; flex-grow: 1; }
 .read-more { font-weight: bold; color: var(--primary-red); font-size: 13px; }
+
+@media (max-width: 768px) {
+    .guide-grid {
+        grid-template-columns: 1fr; /* 1 cột duy nhất */
+        padding: 0 10px;
+    }
+}
