@@ -1,0 +1,90 @@
+/* =========================================
+   FILE: news.css (DÀNH RIÊNG CHO TRANG SỰ KIỆN)
+========================================= */
+
+/* Tiêu đề & Badge */
+.news-header { padding: 50px 50px 20px 50px; }
+.badge-outline { 
+    display: inline-block; padding: 5px 15px; border: 1px solid black; 
+    border-radius: 20px; font-weight: bold; margin-bottom: 20px; font-size: 14px;
+}
+.news-header h1 { font-size: 32px; margin-bottom: 10px; }
+.news-header p { margin-bottom: 30px; color: #555; }
+
+/* Thanh Tabs */
+.filter-tabs { display: flex; gap: 15px; }
+.filter-tabs li a { display: inline-block; padding: 8px 25px; border: 1px solid #ccc; border-radius: 20px; }
+.filter-tabs .active-tab a { background-color: #e2121d; color: white; border-color: #e2121d; } /* Chuyển màu đỏ cho giống thiết kế */
+
+/* =========================================
+   KHỐI 1: SỰ KIỆN NỔI BẬT (GRID)
+========================================= */
+.highlighted-events { padding: 20px 50px 50px 50px; }
+.events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+.event-card { 
+    border: 1px solid #eee; border-radius: 10px; overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column;
+}
+.card-img { 
+    height: 180px; background-color: #f4f4f4; padding: 15px; 
+    border-bottom: 1px solid #eee;
+}
+.tag { padding: 4px 10px; border-radius: 5px; color: white; font-size: 10px; font-weight: bold; }
+.tag-red { background-color: #e2121d; }
+.tag-blue { background-color: #0066cc; }
+.tag-yellow { background-color: #f5a623; }
+
+.card-body { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+.event-meta { font-size: 12px; color: #666; margin-bottom: 10px; }
+.card-body h3 { font-size: 18px; margin-bottom: 10px; line-height: 1.4; }
+.card-body p { font-size: 14px; color: #555; margin-bottom: 20px; flex-grow: 1; }
+
+/* Hàng dưới cùng của thẻ: Giá tiền và Nút bấm */
+.card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px; }
+.price { font-weight: bold; color: #e2121d; font-size: 14px; }
+.btn-red-outline { background: white; color: #e2121d; border: 1px solid #e2121d; border-radius: 5px; padding: 8px 15px; cursor: pointer; }
+
+/* =========================================
+   KHỐI 2: TIN TỨC CỘNG ĐỒNG (FLEXBOX)
+========================================= */
+.community-news { padding: 0 50px 50px 50px; }
+.section-title { margin-bottom: 20px; }
+
+.news-list-item { 
+    display: flex; gap: 30px; border: 1px solid #eee; border-radius: 10px; 
+    padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+.news-list-img { 
+    width: 25%; background-color: #f4f4f4; border-radius: 5px; 
+    display: flex; justify-content: center; align-items: center; border: 1px dashed #ccc;
+}
+.news-list-text { width: 75%; display: flex; flex-direction: column; justify-content: center; }
+.category-text { font-size: 12px; font-weight: bold; color: #009688; margin-bottom: 8px; }
+.news-list-text h3 { font-size: 18px; margin-bottom: 8px; }
+.news-list-text p { font-size: 14px; color: #555; margin-bottom: 15px; }
+.news-meta { font-size: 12px; color: #999; }
+
+/* =========================================
+   KHỐI 3: HỘP ĐĂNG KÝ NHẬN TIN (FLEXBOX)
+========================================= */
+.newsletter-section { padding: 0 50px 80px 50px; }
+
+/* Box màu đỏ khổng lồ */
+.newsletter-box {
+    background-color: #e2121d; color: white; padding: 50px; border-radius: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.newsletter-text { width: 50%; }
+.newsletter-text h2 { font-size: 28px; margin-bottom: 10px; }
+.newsletter-text p { font-size: 14px; opacity: 0.9; line-height: 1.5; }
+
+/* Nút nhập email */
+.newsletter-form { width: 45%; display: flex; gap: 10px; }
+.newsletter-form input { 
+    flex-grow: 1; padding: 15px; border-radius: 8px; border: none; outline: none; font-size: 16px;
+}
+.newsletter-form .btn-black { 
+    background-color: black; color: white; border: none; padding: 0 30px; border-radius: 8px; font-weight: bold; cursor: pointer;
+}
